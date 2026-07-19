@@ -708,7 +708,11 @@ function openItem(idx, card){
     showScreen('screen-memories');
     return;
   }
-  modalEmoji.textContent = item.emoji;
+  if (item.label === "A reason") {
+    modalEmoji.innerHTML = `<span style="background-color: #d4edda; color: #8cd16f; padding: 6px 14px; border-radius: 20px; font-size: 20px; font-weight: 900; display: inline-block; border: 1px solid #c3e6cb; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">${item.emoji}</span>`;
+  } else {
+    modalEmoji.textContent = item.emoji;
+  }
   modalMsg.innerHTML = item.message;
   itemModal.classList.add('show');
 
