@@ -31,11 +31,13 @@
   *{box-sizing:border-box;}
   html,body{
     margin:0; padding:0; 
-    height:-webkit-fill-available; /* Fixes safari/chrome mobile viewport bugs */
-    height:100%;
+    height: 100%;
+    width: 100%;
     font-family:'Fredoka', sans-serif;
     color:var(--ink);
     overflow:hidden;
+    /* Prevents mobile browsers from stretching the page canvas */
+    position: fixed; 
   }
 
   body{
@@ -47,7 +49,8 @@
     align-items:center;
     justify-content:center;
     min-height:100vh;
-    min-height:-webkit-fill-available; /* Ensures background covers mobile screen fully */
+    height: 100vh;
+    width: 100vw;/
     position:relative;
   }
 
@@ -69,8 +72,7 @@
     position:relative;
     width:620px;
     max-width:920px;
-    height:800px;
-    height:-webkit-fill-available; /* Forces the box to fill the exact visible mobile view */
+    height:85vh;
     background:linear-gradient(180deg, var(--cream), #FFF3E2);
     border-radius:30px;
     box-shadow:var(--shadow);
