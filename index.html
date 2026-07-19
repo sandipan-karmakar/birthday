@@ -30,7 +30,9 @@
 
   *{box-sizing:border-box;}
   html,body{
-    margin:0; padding:0; height:100%;
+    margin:0; padding:0; 
+    height:-webkit-fill-available; /* Fixes safari/chrome mobile viewport bugs */
+    height:100%;
     font-family:'Fredoka', sans-serif;
     color:var(--ink);
     overflow:hidden;
@@ -45,6 +47,7 @@
     align-items:center;
     justify-content:center;
     min-height:100vh;
+    min-height:-webkit-fill-available; /* Ensures background covers mobile screen fully */
     position:relative;
   }
 
@@ -67,7 +70,7 @@
     width:390px;
     max-width:900vw;
     height:800px;
-    max-height:100vh;
+    height:-webkit-fill-available; /* Forces the box to fill the exact visible mobile view */
     background:linear-gradient(180deg, var(--cream), #FFF3E2);
     border-radius:30px;
     box-shadow:var(--shadow);
